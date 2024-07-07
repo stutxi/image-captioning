@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Captioning Tool</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            margin-top: 50px;
+        }
+
+        .image-preview-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #imagePreview {
+            max-width: 100%;
+            height: auto;
+            border: 3px solid #007bff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .caption-container {
+            background-color: #ffffff;
+            border: 2px solid #007bff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        #imageCaption {
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        .btn {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <!-- Left Column for Upload and Preview -->
+            <div class="col-md-6">
+                <div class="image-preview-container">
+                    <img id="imagePreview" src="https://cdn.pixabay.com/photo/2017/01/18/17/39/cloud-computing-1990405_1280.png" alt="Image preview" class="img-fluid">
+                </div>
+                <form id="imageUploadForm">
+                    <div class="form-group">
+                        <label for="imageInput">Upload Image</label>
+                        <input type="file" class="form-control-file" id="imageInput" accept="image/*">
+                    </div>
+                    <button type="button" id="submitBtn" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+            <!-- Right Column for Caption Display -->
+            <div class="col-md-6">
+                <div id="captionContainer" class="caption-container">
+                    <p id="imageCaption">Caption will be displayed here.</p>
+                </div>
+                <button id="speakBtn" class="btn btn-secondary btn-block">Hear Caption</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
