@@ -28,7 +28,7 @@ async function getCaptionForImage(imageFile) {
 
     try {
         displayCaption("Processing...");
-        let response = await axios.post("http://localhost:3000/generate-caption", formData, {
+        let response = await axios.post("https://image-captioning-2h8c.onrender.com/generate-caption", formData, {
             headers: {
                 "Content-Type": "multipart/form-data"
             }
