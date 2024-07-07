@@ -38,7 +38,7 @@ app.get("/", (req, res) => {
     res.send("Welcome to our AI Image Captioning Tool");
 })
 
-app.post("/caption-image", upload.single("file"), async (req, res) => {
+app.post("/generate-caption", upload.single("file"), async (req, res) => {
     const filePath = req.file.path;
     const mimeType = mime.lookup(filePath);
 
